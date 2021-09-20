@@ -58,7 +58,7 @@ def configure_routing():
         print('Roting configuration completed !')
 
 
-def On_Off_interface():
+def on_off_interface():
     print('1.Turned off interface ')
     print('2.Turned on interface')
     choice = int(input("Enter your choice: "))
@@ -73,14 +73,15 @@ def On_Off_interface():
 
         cmd = f'ip link set dev {interface_choice}  down'
         res = os.popen(cmd).read()
+        
         print(
-            f'{interface_choice} turned off  | Details => {res}')
+            f'{interface_choice} turned off ')
 
     elif choice == 2:
         cmd = f'ip link set dev {interface_choice}  up'
         res = os.popen(cmd).read()
         print(
-            f'{interface_choice} turned on | Details => {res} ')
+            f'{interface_choice} turned on ')
 
     else:
         print('Wrong option choosed')
